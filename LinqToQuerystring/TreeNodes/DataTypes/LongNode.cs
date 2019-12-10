@@ -17,7 +17,7 @@
 
         public override Expression BuildLinqExpression(IQueryable query, Expression expression, Expression item = null)
         {
-            return Expression.Constant(Convert.ToInt64(this.Text.Replace("L", string.Empty)));
+            return Expression.Constant(Convert.ToInt64(this.Text.Replace("L", string.Empty), System.Globalization.CultureInfo.InvariantCulture));
         }
     }
 }

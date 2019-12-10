@@ -17,7 +17,7 @@
 
         public override Expression BuildLinqExpression(IQueryable query, Expression expression, Expression item = null)
         {
-            return Expression.Constant(Convert.ToDecimal(this.Text.Replace("m", string.Empty)));
+            return Expression.Constant(Convert.ToDecimal(this.Text.Replace("m", string.Empty), System.Globalization.CultureInfo.InvariantCulture));
         }
     }
 }
